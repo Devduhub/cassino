@@ -1,0 +1,13 @@
+node_modules
+.env
+*.log
+logs_debug.txt
+apidb - Copia.sql
+*.key
+*.crt
+dist/
+.vscode/
+.idea/
+*.txt
+!all_games_links.txt
+!fortune_tiger_link.txt
