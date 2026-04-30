@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=45&pause=1000&color=FFD700&center=true&vCenter=true&width=900&lines=🔞+PLATAFORMA+ESTRITAMENTE+18%2B+🔞;💎+CASINO+ENGINE+PREMIUM+2026+💎;🎰+CONTROLE+TOTAL+DE+PROBABILIDADES+🎰" alt="Typing SVG" />
+  <h1>🔞</h1>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=40&pause=1000&color=FFD700&center=true&vCenter=true&width=900&lines=PLATAFORMA%20ESTRITAMENTE%2018%2B%20VIPS;💎%20CASINO%20ENGINE%20PREMIUM%202026%20💎;🎰%20CONTROLE%20TOTAL%20DE%20PROBABILIDADES%20🎰" alt="Typing SVG" />
 </div>
 
 <p align="center">
