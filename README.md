@@ -1,81 +1,86 @@
-# PG Soft Games API - Emulação e Controle
+<div align="center">
+  <img src="https://img.shields.io/badge/STATUS-OPERACIONAL-gold?style=for-the-badge&logo=statuspage&logoColor=white" />
+  <img src="https://img.shields.io/badge/NODE.JS-v18+-green?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/DATABASE-MYSQL-blue?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/CACHE-REDIS-red?style=for-the-badge&logo=redis&logoColor=white" />
+</div>
 
-Este projeto é uma API de emulação para jogos da PG Soft (Fortune Tiger, Fortune Ox, etc.), permitindo o controle de probabilidades, bônus e RTP (Return to Player) através de um painel de banco de dados.
+<br />
 
-## 🚀 Funcionalidades
+<div align="center">
+  <h1> 🎰 PG Soft API Emulator - Premium Edition 💰 </h1>
+  <p><i>A solução definitiva para emulação e controle total de jogos PG Soft com foco em alta performance e lucro.</i></p>
+</div>
 
-- **Emulação de Jogos:** Suporte para os principais títulos da PG Soft.
-- **Controle de Probabilidades:** Ajuste de ganhos e bônus por Agente ou por Usuário.
-- **Sistema de Influencer:** Modo especial para contas de demonstração/influencers.
-- **Logs de Debug:** Rastreamento completo de requisições e erros.
-- **Arquitetura Escalável:** Baseado em Node.js, Express, Redis e MySQL.
+---
 
-## 🛠️ Pré-requisitos
+### 💎 Sobre o Projeto
+Este repositório contém uma infraestrutura robusta desenvolvida em **TypeScript** para emulação de servidores de jogos da PG Soft. O sistema permite que operadores tenham controle absoluto sobre a experiência do usuário, desde o saldo até as chances críticas de premiação.
 
-Antes de começar, você precisará ter instalado em sua máquina ou VPS:
+### 🎯 Principais Recursos
+- 🚀 **Performance Extrema:** Backend otimizado com cache em Redis.
+- 🛠️ **Painel de Probabilidades:** Ajuste em tempo real de RTP e bônus.
+- 📱 **Mobile First:** Interface de jogos 100% responsiva.
+- 🔐 **Segurança Reforçada:** Camada de proteção contra ataques e logs de auditoria.
 
-- [Node.js](https://nodejs.org/) (Versão 18 ou superior)
-- [MySQL](https://www.mysql.com/) ou MariaDB
-- [Redis Server](https://redis.io/)
+---
 
-## 📦 Instalação
+### ⚙️ Configuração Rápida
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Devduhub/cassino.git
-   cd cassino
-   ```
-
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-
-3. Configure as variáveis de ambiente:
-   - Renomeie o arquivo `.env.example` para `.env`.
-   - Edite o `.env` com as suas credenciais do banco de dados e do Redis.
-
-## 🗄️ Configuração do Banco de Dados
-
-1. Crie um banco de dados chamado `pgsoft` (ou o nome que preferir no `.env`).
-2. Importe o arquivo `apidb.sql` localizado na raiz do projeto para criar as tabelas necessárias.
-
-## 🌐 Configuração de DNS Local (Desenvolvimento)
-
-Para que os jogos carreguem corretamente no seu ambiente local, você deve apontar os domínios da PG Soft para o seu IP local. 
-
-No Windows, edite o arquivo `C:\Windows\System32\drivers\etc\hosts` e adicione:
-```text
-127.0.0.1 m.pgsoft.com
-127.0.0.1 api.pgsoft.com
-```
-
-## 🟢 Como Executar
-
-Para iniciar o servidor em modo de desenvolvimento:
+<details>
+<summary><b>1. Instalação das Dependências 📦</b></summary>
+<p>
+Use o gerenciador de pacotes de sua preferência:
 ```bash
-npm run dev
+npm install
+# ou
+yarn install
 ```
+</p>
+</details>
 
-O servidor iniciará por padrão na porta `3000`.
+<details>
+<summary><b>2. Banco de Dados 🗄️</b></summary>
+<p>
+Importe o arquivo <code>apidb.sql</code> no seu MySQL. O esquema já está otimizado para produção.
+</p>
+</details>
 
-## 📈 Ajustando Probabilidades e Ganhos
+<details>
+<summary><b>3. Variáveis de Ambiente 🔑</b></summary>
+<p>
+Crie um arquivo <code>.env</code> baseado no <code>.env.example</code>:
+```env
+DB_HOST=localhost
+DB_NAME=pgsoft
+REDIS_HOST=127.0.0.1
+```
+</p>
+</details>
 
-As chances de vitória são controladas diretamente no banco de dados:
+---
 
-- **Tabela `agents`:** Configura as probabilidades globais do operador (agente).
-  - `probganho`: Chance geral de acerto.
-  - `probbonus`: Frequência de bônus/cartas.
-- **Tabela `users`:** Configurações específicas para cada jogador.
-  - `rtp`: Porcentagem de retorno (ex: 100 = neutro, 500 = ganha muito).
-  - `isinfluencer`: Define se a conta é do tipo influencer (ganhos facilitados).
+### 📈 Configurações de Ganhos (RTP)
 
-## ⚠️ Segurança
+| Parâmetro | Descrição | Impacto no Jogo |
+| :--- | :--- | :--- |
+| **ProbGain** | Probabilidade Geral | Define se a rodada será vitoriosa |
+| **ProbBonus** | Frequência de Bônus | Controla a entrada em modos especiais |
+| **RTP User** | Return to Player | Porcentagem de lucro/perda por usuário |
+| **Influencer** | Modo Demonstração | Ganhos garantidos para vídeos/lives |
 
-- Nunca suba o seu arquivo `.env` ou seus certificados SSL (`.key`, `.crt`) para o GitHub.
-- Certifique-se de alterar o `API_SECRET` no arquivo `.env` antes de colocar em produção.
-- O arquivo `.gitignore` já está configurado para proteger seus dados sensíveis.
+---
 
-## 📄 Licença
+### 🛠️ Tecnologias Utilizadas
+- **Linguagem:** TypeScript / Node.js
+- **Framework:** Express
+- **Banco de Dados:** MySQL 8.0
+- **Cache:** Redis Server
+- **Comunicação:** Socket.IO (Tempo Real)
 
-Este projeto está sob a licença MIT.
+---
+
+<div align="center">
+  <p>Desenvolvido com ❤️ para a comunidade Devduhub</p>
+  <img src="https://img.shields.io/github/license/Devduhub/cassino?style=flat-square&color=gold" />
+</div>
